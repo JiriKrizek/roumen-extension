@@ -2,12 +2,12 @@ var KEY_LEFT = 37;
 var KEY_RIGHT = 39;
 
 function getButton(text) {
-  buttons = document.getElementsByClassName("roumingButton");
+  var buttons = document.getElementsByClassName("roumingButton");
 
   for (var i = 0; i < buttons.length; i++) {
-    hrf = buttons[i].children[0];
+    var hrf = buttons[i].children[0];
     if (hrf) { 
-      ht_text = hrf.innerHTML;
+      var ht_text = hrf.innerHTML;
       if  (ht_text == text) {
         return buttons[i].children[0];
       }
@@ -25,9 +25,9 @@ function getNextButton() {
 
 document.body.addEventListener('keydown', function (event) {
   if (event.keyCode == KEY_LEFT) {
-    button = getPrevButton();
+    var button = getPrevButton();
   } else if (event.keyCode == KEY_RIGHT) {
-    button = getNextButton();
+    var button = getNextButton();
   }
   if (typeof button === 'undefined') {
     // do nothing
