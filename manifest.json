@@ -1,0 +1,11 @@
+{
+	"name" : "Roumen browser",
+	"version" : "0.0.2",
+	"manifest_version" : 2,
+	"content_scripts" : [
+		{
+			"matches" : ["*://www.rouming.cz/*"],
+			"js" : ["content.js"]
+		}
+	]
+}
