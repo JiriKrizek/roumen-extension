@@ -9,7 +9,7 @@ function getButton(text) {
 
   for (var i = 0; i < buttons.length; i++) {
     var hrf = buttons[i].children[0];
-    if (hrf) { 
+    if (hrf) {
       var ht_text = hrf.innerHTML;
       if  (ht_text == text) {
         return buttons[i].children[0];
@@ -26,6 +26,14 @@ function getNextButton() {
   return getButton("&gt;&gt;");
 }
 
+function showAdult() {
+  masoMessage = document.getElementsByClassName("masoForumMessage")
+  if (masoMessage.length > 0) {
+    masoMessage[0].getElementsByTagName("a")[0].style.display='none'
+    masoMessage[0].getElementsByTagName("div")[0].style.display='block'
+  }
+}
+
 document.body.addEventListener('keydown', function (event) {
   if (event.keyCode == KEY_LEFT) {
     var button = getPrevButton();
@@ -34,7 +42,9 @@ document.body.addEventListener('keydown', function (event) {
   }
   if (typeof button === 'undefined') {
     // do nothing
-  } else { 
-    button.click(); 
+  } else {
+    button.click();
   }
 });
+
+showAdult()
